@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>SkillSwap — Trade & Learn Skills</title>
+  <meta name="description" content="SkillSwap — trade skills, learn new things, and find mentors. Beginners welcome." />
+  <link rel="stylesheet" href="style1.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div class="brand">
+        <a href="#" class="logo">Skill<span class="accent">Swap</span></a>
+        <p class="tag">Your skill is currency</p>
+      </div>
+
+      <nav class="nav">
+        <button id="hamburger" class="hamburger" aria-label="Open menu">☰</button>
+        <ul class="nav-links" id="navLinks" aria-hidden="true">
+          <li><a href="#explore">Explore</a></li>
+          <li><a href="#learn">Learn</a></li>
+          <li><a href="#how">How it works</a></li>
+          <li><a href="#about">About</a></li>
+        </ul>
+      </nav>
+
+      <div class="top-actions">
+        <button id="loginBtn" class="btn ghost">Login</button>
+        <button id="signupBtn" class="btn primary">Join</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero" id="home" aria-labelledby="hero-heading">
+      <div class="hero-grid">
+        <div class="hero-text">
+          <h1 id="hero-heading">Trade skills. Learn faster. Grow together.</h1>
+          <p class="lead">Find people to teach you what you want to learn — and give back by teaching what you know. Perfect for beginners & experts.</p>
+          <div class="hero-ctas">
+            <button class="btn primary" id="ctaExplore">Explore Skills</button>
+            <button class="btn ghost" id="ctaLearn">Start Learning</button>
+          </div>
+
+          <div class="quick-stats">
+            <div><strong id="stat-users">1.2k+</strong><span>Members</span></div>
+            <div><strong id="stat-skills">240</strong><span>Skills</span></div>
+            <div><strong id="stat-swaps">3.4k+</strong><span>Swaps</span></div>
+          </div>
+        </div>
+
+        <div class="hero-card">
+          <div class="card-header">
+            <div>
+              <div class="chip">Featured</div>
+              <h3>Learn Web Design — Swap for Social Media Coaching</h3>
+            </div>
+            <div class="price">No money • Just skills</div>
+          </div>
+
+          <div class="skill-grid">
+            <div class="skill">UI Design</div>
+            <div class="skill">Figma</div>
+            <div class="skill">Branding</div>
+            <div class="skill">Social Media</div>
+            <div class="skill">Strategy</div>
+          </div>
+
+          <div class="card-actions">
+            <button class="btn primary" id="cardConnect">Connect</button>
+            <button class="btn ghost" id="cardSave">Save</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPLORE SKILLS -->
+    <section id="explore" class="section">
+      <div class="section-head">
+        <h2>Explore Skills</h2>
+        <div class="explore-controls">
+          <input id="searchInput" type="search" placeholder="Search skills, people or topics..." aria-label="Search skills">
+          <select id="filterSelect" aria-label="Filter by category">
+            <option value="">All categories</option>
+            <option>Design</option>
+            <option>Development</option>
+            <option>Marketing</option>
+            <option>Language</option>
+            <option>Music</option>
+            <option>Life Skills</option>
+          </select>
+        </div>
+      </div>
+
+      <div id="gridExplore" class="grid-explore" aria-live="polite">
+        <!-- skill cards populated by JS -->
+      </div>
+
+      <div class="more">
+        <button id="loadMoreBtn" class="btn ghost">Load more</button>
+      </div>
+    </section>
+
+    <!-- LEARN / BEGINNER FLOW -->
+    <section id="learn" class="section learn-section">
+      <div class="section-head">
+        <h2>For Beginners — Skill Builder</h2>
+        <p class="muted">No skill? No problem. Complete short micro-lessons, earn badges, then swap your new skill.</p>
+      </div>
+
+      <div class="learn-grid">
+        <div class="lesson" data-lesson="html">
+          <h3>Intro to HTML</h3>
+            <img src="top-view-unrecognizable-hacker-performing-cyberattack-night.jpg" alt="HTML" />
+          <p class="muted">5–10 min • Hands-on</p>
+          <button class="btn primary lesson-start">Start</button>
+        </div>
+
+        <div class="lesson" data-lesson="css">
+          <h3>Basics of CSS</h3>
+           <img src="https://cdn.pixabay.com/photo/2016/11/19/14/00/code-1839406_1280.jpg" alt="CSS" />
+          <p class="muted">7–12 min • Styles & layout</p>
+          <button class="btn primary lesson-start">Start</button>
+        </div>
+
+        <div class="lesson" data-lesson="comm">
+          <h3>Communication Skills</h3>
+          <img src="three-types-of-Communication-980x612.png" alt="Communication" />
+          <p class="muted">10 min • Soft skills</p>
+          <button class="btn primary lesson-start">Start</button>
+        </div>
+
+        <div class="lesson" data-lesson="canva">
+          <h3>Design with Canva</h3>
+           <img src="https://cdn.pixabay.com/photo/2015/01/08/18/26/office-593333_1280.jpg" alt="Canva" />
+          <p class="muted">8–12 min • Create social posts</p>
+          <button class="btn primary lesson-start">Start</button>
+        </div>
+      </div>
+
+      <div class="badge-area">
+        <h4>Your beginner badges</h4>
+        <div id="badges" class="badges">
+          <!-- awarded badges -->
+        </div>
+      </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section id="how" class="section how-section">
+      <h2>How it works</h2>
+      <div class="how-grid">
+        <div class="how-step">
+          <div class="step-num">1</div>
+          <h4>Create profile & list what you can offer</h4>
+          <p class="muted">Add clear descriptions and level (beginner / intermediate / expert).</p>
+        </div>
+
+        <div class="how-step">
+          <div class="step-num">2</div>
+          <h4>Search for what you need</h4>
+          <p class="muted">Filter by skill, level, or mentoring preference.</p>
+        </div>
+
+        <div class="how-step">
+          <div class="step-num">3</div>
+          <h4>Connect & schedule a swap</h4>
+          <p class="muted">Use in-app chat to agree terms — time, topic, and expectations.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER / ABOUT -->
+    <footer id="about" class="section footer">
+      <div class="footer-grid">
+        <div>
+          <h3>About SkillSwap</h3>
+          <p class="muted">A community-first platform to exchange practical skills. Built to be inclusive — beginners encouraged.</p>
+        </div>
+        <div>
+          <h4>Connect</h4>
+          <ul class="muted">
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">Privacy</a></li>
+            <li><a href="#">Terms</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Join</h4>
+          <button id="signupFooter" class="btn primary">Create account — it's free</button>
+        </div>
+      </div>
+
+      <div class="credits muted">© <span id="year"></span> SkillSwap — Built with care</div>
+    </footer>
+  </main>
+
+  <!-- LOGIN / SIGNUP MODALS -->
+  <div id="modalOverlay" class="modal-overlay hidden" aria-hidden="true">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <button id="modalClose" class="modal-close" aria-label="Close">✕</button>
+      <h3 id="modalTitle">Sign up</h3>
+      <form id="signupForm" class="form">
+        <label>Full name <input name="name" required /></label>
+        <label>Email <input name="email" type="email" required /></label>
+        <label>What skill can you offer? <input name="skill" placeholder="e.g., 'English conversation'"/></label>
+        <div class="form-actions">
+          <button type="submit" class="btn primary">Create account</button>
+          <button type="button" class="btn ghost" id="cancelModal">Cancel</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- LESSON MODAL -->
+  <div id="lessonOverlay" class="modal-overlay hidden" aria-hidden="true">
+    <div class="modal small" role="dialog" aria-modal="true" aria-labelledby="lessonTitle">
+      <button id="lessonClose" class="modal-close" aria-label="Close">✕</button>
+      <h3 id="lessonTitle">Lesson</h3>
+      <div id="lessonBody">
+        <!-- filled by JS -->
+      </div>
+      <div class="form-actions">
+        <button id="completeLesson" class="btn primary">Mark complete & earn badge</button>
+        <button id="cancelLesson" class="btn ghost">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script1.js" defer></script>
+</body>
+</html>
