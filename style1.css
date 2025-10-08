@@ -1,0 +1,480 @@
+/* SkillSwap — Modern soft-futuristic UI
+   Uses grids, gradients, glass panels, responsive layout
+*/
+:root {
+  --bg: linear-gradient(120deg, #f6fff9 0%, #eaf3ff 50%, #f5f0ff 100%);
+  --panel: rgba(255, 255, 255, 0.6);
+  --glass: rgba(255, 255, 255, 0.15);
+  --muted: #4b5563;
+  --accent1: #6de7d7;
+  --accent2: #9b7cff;
+  --card-shadow: 0 8px 30px rgba(12, 18, 30, 0.08);
+  --radius: 14px;
+  --text: #071032;
+}
+
+body {
+  margin: 0;
+  font-family: "Poppins", Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background: var(--bg);
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Topbar */
+.topbar {
+  backdrop-filter: blur(8px);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  box-shadow: 0 2px 8px rgba(12, 18, 30, 0.04)
+}
+
+.topbar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 20px;
+  gap: 12px
+}
+
+.brand .logo {
+  font-weight: 800;
+  font-size: 20px;
+  letter-spacing: 0.4px
+}
+
+.brand .accent {
+  background: linear-gradient(90deg, var(--accent1), var(--accent2));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent
+}
+
+/* nav */
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 14px
+}
+
+.hamburger {
+  font-size: 20px;
+  border: none;
+  background: transparent;
+  cursor: pointer
+}
+
+.nav-links {
+  display: flex;
+  gap: 12px;
+  list-style: none;
+  padding: 0;
+  margin: 0
+}
+
+.nav-links a {
+  color: var(--muted);
+  text-decoration: none;
+  padding: 8px 10px;
+  border-radius: 10px
+}
+
+.nav-links a:hover {
+  background: rgba(0, 0, 0, 0.04)
+}
+
+/* buttons */
+.btn {
+  border: none;
+  padding: 10px 14px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600
+}
+
+.btn.primary {
+  background: linear-gradient(90deg, var(--accent1), var(--accent2));
+  color: #021
+}
+
+.btn.ghost {
+  background: transparent;
+  border: 1px solid rgba(10, 10, 10, 0.04);
+  color: var(--text)
+}
+
+.btn.small {
+  padding: 6px 8px;
+  font-size: 13px
+}
+
+/* layout grid */
+.layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  padding: 28px;
+  max-width: 1200px;
+  margin: 0 auto
+}
+
+@media(min-width:980px) {
+  .layout {
+    grid-template-columns: 1fr;
+    gap: 28px
+  }
+}
+
+/* HERO */
+.hero {
+  padding: 36px;
+  border-radius: 18px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.75), rgba(245, 240, 255, 0.7));
+  box-shadow: var(--card-shadow)
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  align-items: center
+}
+
+@media(min-width:900px) {
+  .hero-grid {
+    grid-template-columns: 1fr 420px
+  }
+}
+
+.hero-text h1 {
+  font-size: 34px;
+  margin: 0 0 12px
+}
+
+.lead {
+  color: var(--muted);
+  margin: 0 0 18px
+}
+
+.hero-ctas {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 16px
+}
+
+.quick-stats {
+  display: flex;
+  gap: 18px;
+  margin-top: 14px
+}
+
+.quick-stats div {
+  background: rgba(255, 255, 255, 0.6);
+  padding: 10px;
+  border-radius: 10px;
+  min-width: 86px;
+  text-align: center
+}
+
+.hero-card {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.95), rgba(250, 246, 255, 0.95));
+  padding: 18px;
+  border-radius: 14px;
+  box-shadow: var(--card-shadow)
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center
+}
+
+.chip {
+  display: inline-block;
+  background: linear-gradient(90deg, var(--accent1), var(--accent2));
+  color: #021;
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-weight: 700
+}
+
+.skill-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin: 14px 0
+}
+
+.skill {
+  background: rgba(0, 0, 0, 0.03);
+  padding: 8px;
+  border-radius: 8px;
+  text-align: center;
+  color: var(--muted)
+}
+
+/* section layout */
+.section {
+  padding: 28px;
+  border-radius: 14px;
+  margin-top: 18px;
+  background: rgba(255, 255, 255, 0.6);
+  box-shadow: var(--card-shadow)
+}
+
+.section-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px
+}
+
+.explore-controls {
+  display: flex;
+  gap: 12px;
+  align-items: center
+}
+
+.explore-controls input,
+.explore-controls select {
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid rgba(10, 10, 10, 0.04);
+  background: transparent
+}
+
+/* grid explore */
+.grid-explore {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 14px
+}
+
+@media(min-width:700px) {
+  .grid-explore {
+    grid-template-columns: repeat(2, 1fr)
+  }
+}
+
+@media(min-width:1100px) {
+  .grid-explore {
+    grid-template-columns: repeat(3, 1fr)
+  }
+}
+
+.card {
+  padding: 16px;
+  border-radius: 12px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.9), rgba(250, 250, 255, 0.9));
+  box-shadow: 0 8px 30px rgba(12, 18, 30, 0.05);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.card h3 {
+  margin: 0
+}
+
+.card .meta {
+  color: var(--muted);
+  font-size: 13px
+}
+
+.card .tags {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap
+}
+
+.tag {
+  background: linear-gradient(90deg, rgba(120, 200, 200, 0.12), rgba(180, 140, 255, 0.12));
+  padding: 6px 8px;
+  border-radius: 8px;
+  font-weight: 600;
+  color: var(--muted);
+  font-size: 13px
+}
+
+.card-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: auto;
+  justify-content: flex-end
+}
+
+/* learn grid */
+.learn-grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 12px
+}
+
+@media(min-width:900px) {
+  .learn-grid {
+    grid-template-columns: repeat(4, 1fr)
+  }
+}
+
+.lesson {
+  padding: 16px;
+  border-radius: 12px;
+  background: linear-gradient(90deg, #fff, #fff);
+  box-shadow: var(--card-shadow);
+  text-align: center
+}
+
+.lesson h3 {
+  margin: 0 0 6px
+}
+.lesson img{
+  width:150px;
+  height:150px;
+}
+.badges {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  padding-top: 8px
+}
+
+.badge {
+  background: linear-gradient(90deg, var(--accent1), var(--accent2));
+  padding: 8px 10px;
+  border-radius: 999px;
+  color: #021;
+  font-weight: 700
+}
+
+/* how section */
+.how-grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 12px
+}
+
+@media(min-width:800px) {
+  .how-grid {
+    grid-template-columns: repeat(3, 1fr)
+  }
+}
+
+.how-step {
+  background: rgba(255, 255, 255, 0.85);
+  padding: 14px;
+  border-radius: 10px;
+  box-shadow: var(--card-shadow)
+}
+
+.step-num {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: linear-gradient(90deg, var(--accent1), var(--accent2));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  margin-bottom: 8px
+}
+
+/* footer */
+.footer {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding-top: 16px
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 12px
+}
+
+@media(min-width:800px) {
+  .footer-grid {
+    grid-template-columns: 2fr 1fr 1fr
+  }
+}
+
+.credits {
+  text-align: center;
+  color: var(--muted);
+  padding-top: 10px
+}
+
+/* modals */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(rgba(4, 6, 10, 0.25), rgba(4, 6, 10, 0.25));
+  z-index: 120
+}
+
+.modal {
+  background: linear-gradient(180deg, #fff, #faf7ff);
+  padding: 18px;
+  border-radius: 12px;
+  max-width: 520px;
+  width: 94%;
+  box-shadow: 0 20px 60px rgba(12, 18, 30, 0.2)
+}
+
+.modal.small {
+  max-width: 420px
+}
+
+.hidden {
+  display: none
+}
+
+.modal-close {
+  position: absolute;
+  right: 22px;
+  top: 18px;
+  background: transparent;
+  border: none;
+  font-size: 18px
+}
+
+/* form */
+.form label {
+  display: block;
+  margin-bottom: 10px
+}
+
+.form input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid rgba(10, 10, 10, 0.04);
+  margin-top: 6px
+}
+
+/* utilities */
+.muted {
+  color: var(--muted)
+}
+
+.more {
+  display: flex;
+  justify-content: center;
+  margin-top: 14px
+}
+
+/* small screens */
+@media(max-width:680px) {
+  .nav-links {
+    display: none
+  }
+
+  .hero-text h1 {
+    font-size: 24px
+  }
+}
